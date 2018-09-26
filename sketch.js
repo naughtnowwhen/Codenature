@@ -26,7 +26,6 @@ var EllipseMaker = function(x,y,w,h){
       }
       else if(rand === 2){
         this.y ++;
-        console.log(this.y);
       }
       else if (rand === 3){
         this.y --;
@@ -35,7 +34,18 @@ var EllipseMaker = function(x,y,w,h){
   };
 };
 
+var howMany = 50;
+var howManyArr = [];
+howManyArr.length = howMany.valueOf();
 
+for (var i = 0; i < howManyArr.length; i ++){
+howManyArr[i] = new EllipseMaker(i * 3,i * 3,20,20);
+}
+
+
+
+
+// single one
 var el1 = new EllipseMaker(200,700,15,15);
 
 
@@ -49,4 +59,9 @@ function setup() {
 function draw() {
   background(150);
   el1.make();
+  for(var i = 0; i < howManyArr.length; i ++){
+  howManyArr[i].make();  
+  }
+
+
 }
